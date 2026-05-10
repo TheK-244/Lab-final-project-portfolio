@@ -1,0 +1,351 @@
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: sans-serif;
+  font-size: clamp(1rem,0.95rem + 0.25vw, 1.125rem);
+  background: #e3e2db;
+  line-height: 1.6;
+}
+
+/* Dark mode styles for the whole body*/
+.dark-mode {
+  background: #242423;
+  color: #f7f6f2;
+}
+.dark-mode .navbar {
+  background: #242423;
+  border-bottom: 2px solid rgba(247, 246, 242, 0.12);
+}
+
+/* Dark mode button style */
+.dark-mode-toggle {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 0.5rem 1rem;
+  background: #01696f;
+  color: #f7f6f2;
+  border: none;
+  border-radius: 0.375rem;
+  cursor: pointer;
+}
+
+
+.image {
+  width: 400px;
+  float: none;
+  height: auto;
+  margin: 0;
+}
+
+
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+}
+
+.nav-links a {
+  text-decoration: none;
+  font-size: clamp(0.875rem, 0.8rem  + 0.35vw, 1rem);;
+  font-weight: 500;
+  color: #7a7974;
+}
+
+.nav-links a:hover {
+  color: #01696f;
+}
+
+.navbar {
+  position: sticky;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  background: #e3e2db;
+  border-bottom: 2px solid rgba(40, 37, 29, 0.12);
+  min-height: 60px;
+  padding-left: 50px;
+}
+
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  padding: clamp(3rem, 8vw, 4rem) 2rem;
+  max-width: 960px;
+  margin: 0 auto;
+  
+}
+
+.hero-img {
+  width: clamp(160px, 25vw, 280px);
+  height: clamp(160px, 25vw, 280px);
+  object-fit: cover;
+  border-radius: 0.75rem;
+  box-shadow: -7px 5px 15px -6px rgba(0, 0, 0, 0.20);
+}
+
+.hero-name {
+  display: block;           
+  font-size: clamp(2rem,1.2rem+ 2.5vw,3.5rem);
+  font-weight: 600;
+  color: #01696f;
+  line-height: 1.15;
+}
+
+.hero-img-wrap {
+  flex-shrink: 0;
+}
+
+
+/* The three lines menu styles */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 44px;
+  height: 44px;
+  padding: 0.5rem;
+}
+
+.hamburger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: #28251d;
+  border-radius: 9999px;
+  transition: transform 180ms cubic-bezier(0.16, 1, 0.3, 1), opacity 180ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Mobile Nav bar */
+@media (max-width: 640px) {
+  
+  .hamburger { display: flex; }
+
+  .hero {
+    flex-direction: column;
+    padding: 2rem 1rem;
+    gap: 1.5rem;
+  }
+
+  .hero-img {
+    width: 140px;
+    height: 140px;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    gap: 0;
+    background: #f7f6f2;
+    border-bottom: 1px solid rgba(40, 37, 29, 0.12);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    padding: 0.5rem 0;
+    z-index: 99;
+  }
+
+
+
+  .nav-links.open { display: flex; }
+
+  .nav-links a {
+    padding: 0.75rem 1.5rem;
+    font-size: clamp(1rem,0.95rem + 0.25vw, 1.125rem);
+    color: #28251d;
+  }
+
+  .nav-links a:hover {
+    background: #cedcd8;
+    color: #01696f;
+  }
+}
+
+/* Stack the hero section vertically on mobile */
+@media (max-width: 640px) {
+  .hero {
+  flex-direction: column;
+  text-align: left;
+  padding: clamp(3rem, 8vw, 4rem) clamp(1rem, 2vw, 2rem);
+  gap: clamp(1.5rem, 3vw, 2rem);
+}
+  .hero-img {
+  width: 140px;
+  height: 140px;
+}
+}
+
+.section {
+  padding: clamp(3rem, 6vw, 4rem) 2rem;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.section-alt {
+  background: #ffffff;
+  max-width: 100%;
+  border-top: 1px solid rgba(40, 37, 29, 0.12);
+  border-bottom: 1px solid rgba(40, 37, 29, 0.12);
+}
+
+.section-alt > * {
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section h2 {
+  font-size: clamp(1.25rem, 1.15rem + 0.35vw, 1.75rem);
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #01696f;
+}
+
+.section p {
+  font-size: clamp(1rem,0.95rem + 0.25vw, 1.125rem);
+  color: black;
+  max-width: 60ch;
+  margin-bottom: 1.5rem;
+}
+
+
+.dark-mode .section p {
+  font-size: clamp(1rem,0.95rem + 0.25vw, 1.125rem);
+  color: rgb(255, 255, 255);
+  max-width: 60ch;
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: 640px) {
+  .section { padding: clamp(3rem, 8vw, 4rem) clamp(1rem, 2vw, 2rem); }
+}
+
+
+/* Skills badges design*/
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.badge {
+  padding: 0.25rem 0.5rem;
+  background: rgba(40, 37, 29, 0.12);
+  color: #01696f;
+  font-size: clamp(0.75rem,  0.7rem  + 0.25vw, 0.875rem);
+  font-weight: 600;
+  border-radius: 9999px;
+  border-color: #cedcd8;
+  border: 1px solid;
+  box-shadow: -7px 5px 15px -6px rgba(0, 0, 0, 0.30);
+}
+
+.dark-mode .badge {
+  color: #01696f;
+  border-color: rgba(247, 246, 242, 0.12);
+}
+
+
+/* Project card design */
+.project-card {
+  border: 1px solid #909090;
+  border-radius: 10px;
+  background-color: #f1eedc;
+  padding: 20px;
+  box-shadow: -7px 5px 15px -6px rgba(0, 0, 0, 0.20);
+  margin: 20px 0;
+}
+
+/* Contact form design */
+form {
+  border: 1px solid #909090;
+  border-radius: 10px;
+  background-color: #f1eedc;
+  padding: 20px;
+  box-shadow: -7px 5px 15px -6px rgba(0, 0, 0, 0.20);
+}
+
+form label {
+  display: block;
+  font-weight: 500;
+
+}
+
+input[type=text], input[type=email], select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  background-color: #F7F6F2;
+}
+
+textarea {
+  width: 100%;
+  height: 150px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  background-color: #F7F6F2;
+  resize: vertical;
+  font-family: sans-serif;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #01696f;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+input[type=submit]:hover {
+  background-color: #0c4e54;
+}
+
+/* Dark mode styles for the form */
+.dark-mode form {
+  background-color: #262522;
+  border-color: #3a3835;
+  box-shadow: -7px 5px 15px -6px rgba(0, 0, 0, 0.45);
+}
+
+/*labels are name of fields, just so I don't forget*/
+.dark-mode form label {
+  color: #cdccca;
+}
+
+.dark-mode input[type=text],
+.dark-mode input[type=email],
+.dark-mode textarea {
+  background-color: #2e2c29;
+  border-color: #4a4845;
+  color: #cdccca;
+}
+
+.footer {
+  text-align: center;
+  padding: 2rem;
+  font-size: clamp(0.75rem,  0.7rem  + 0.25vw, 0.875rem);
+  color: #7a7974;
+  border-top: 1px solid rgba(40, 37, 29, 0.12);
+}
