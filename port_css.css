@@ -5,7 +5,7 @@ html {
 
 body {
   font-family: sans-serif;
-  font-size: clamp(1rem,0.95rem + 0.25vw, 1.125rem);
+  font-size: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
   background: #e3e2db;
   line-height: 1.6;
 }
@@ -15,6 +15,7 @@ body {
   background: #242423;
   color: #f7f6f2;
 }
+
 .dark-mode .navbar {
   background: #242423;
   border-bottom: 2px solid rgba(247, 246, 242, 0.12);
@@ -41,7 +42,10 @@ body {
   margin: 0;
 }
 
-
+/* Nav links styles */
+.dark-mode .nav-links a {
+  color: #f7f6f2;
+}
 
 .nav-links {
   display: flex;
@@ -51,7 +55,7 @@ body {
 
 .nav-links a {
   text-decoration: none;
-  font-size: clamp(0.875rem, 0.8rem  + 0.35vw, 1rem);;
+  font-size: clamp(0.875rem, 0.8rem + 0.35vw, 1rem);
   font-weight: 500;
   color: #7a7974;
 }
@@ -71,6 +75,8 @@ body {
   padding-left: 50px;
 }
 
+
+/* Hero section styles */
 .hero-text {
   display: flex;
   flex-direction: column;
@@ -84,7 +90,7 @@ body {
   padding: clamp(3rem, 8vw, 4rem) 2rem;
   max-width: 960px;
   margin: 0 auto;
-  
+
 }
 
 .hero-img {
@@ -96,8 +102,8 @@ body {
 }
 
 .hero-name {
-  display: block;           
-  font-size: clamp(2rem,1.2rem+ 2.5vw,3.5rem);
+  display: block;
+  font-size: clamp(2rem, 1.2rem+ 2.5vw, 3.5rem);
   font-weight: 600;
   color: #01696f;
   line-height: 1.15;
@@ -130,8 +136,10 @@ body {
 
 /* Mobile Nav bar */
 @media (max-width: 640px) {
-  
-  .hamburger { display: flex; }
+
+  .hamburger {
+    display: flex;
+  }
 
   .hero {
     flex-direction: column;
@@ -154,18 +162,20 @@ body {
     gap: 0;
     background: #f7f6f2;
     border-bottom: 1px solid rgba(40, 37, 29, 0.12);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     padding: 0.5rem 0;
     z-index: 99;
   }
 
 
 
-  .nav-links.open { display: flex; }
+  .nav-links.open {
+    display: flex;
+  }
 
   .nav-links a {
     padding: 0.75rem 1.5rem;
-    font-size: clamp(1rem,0.95rem + 0.25vw, 1.125rem);
+    font-size: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
     color: #28251d;
   }
 
@@ -178,15 +188,16 @@ body {
 /* Stack the hero section vertically on mobile */
 @media (max-width: 640px) {
   .hero {
-  flex-direction: column;
-  text-align: left;
-  padding: clamp(3rem, 8vw, 4rem) clamp(1rem, 2vw, 2rem);
-  gap: clamp(1.5rem, 3vw, 2rem);
-}
+    flex-direction: column;
+    text-align: left;
+    padding: clamp(3rem, 8vw, 4rem) clamp(1rem, 2vw, 2rem);
+    gap: clamp(1.5rem, 3vw, 2rem);
+  }
+
   .hero-img {
-  width: 140px;
-  height: 140px;
-}
+    width: 140px;
+    height: 140px;
+  }
 }
 
 .section {
@@ -202,7 +213,7 @@ body {
   border-bottom: 1px solid rgba(40, 37, 29, 0.12);
 }
 
-.section-alt > * {
+.section-alt>* {
   max-width: 960px;
   margin-left: auto;
   margin-right: auto;
@@ -216,7 +227,7 @@ body {
 }
 
 .section p {
-  font-size: clamp(1rem,0.95rem + 0.25vw, 1.125rem);
+  font-size: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
   color: black;
   max-width: 60ch;
   margin-bottom: 1.5rem;
@@ -224,14 +235,16 @@ body {
 
 
 .dark-mode .section p {
-  font-size: clamp(1rem,0.95rem + 0.25vw, 1.125rem);
+  font-size: clamp(1rem, 0.95rem + 0.25vw, 1.125rem);
   color: rgb(255, 255, 255);
   max-width: 60ch;
   margin-bottom: 1.5rem;
 }
 
 @media (max-width: 640px) {
-  .section { padding: clamp(3rem, 8vw, 4rem) clamp(1rem, 2vw, 2rem); }
+  .section {
+    padding: clamp(3rem, 8vw, 4rem) clamp(1rem, 2vw, 2rem);
+  }
 }
 
 
@@ -246,7 +259,7 @@ body {
   padding: 0.25rem 0.5rem;
   background: rgba(40, 37, 29, 0.12);
   color: #01696f;
-  font-size: clamp(0.75rem,  0.7rem  + 0.25vw, 0.875rem);
+  font-size: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
   font-weight: 600;
   border-radius: 9999px;
   border-color: #cedcd8;
@@ -270,6 +283,12 @@ body {
   margin: 20px 0;
 }
 
+.dark-mode .project-card {
+  background-color: #262522;
+  border-color: #3a3835;
+  box-shadow: -7px 5px 15px -6px rgba(0, 0, 0, 0.45);
+}
+
 /* Contact form design */
 form {
   border: 1px solid #909090;
@@ -285,7 +304,9 @@ form label {
 
 }
 
-input[type=text], input[type=email], select {
+input[type=text],
+input[type=email],
+select {
   width: 100%;
   padding: 12px;
   border: 1px solid #ccc;
@@ -318,6 +339,7 @@ input[type=submit] {
   border-radius: 4px;
   cursor: pointer;
 }
+
 input[type=submit]:hover {
   background-color: #0c4e54;
 }
@@ -345,7 +367,7 @@ input[type=submit]:hover {
 .footer {
   text-align: center;
   padding: 2rem;
-  font-size: clamp(0.75rem,  0.7rem  + 0.25vw, 0.875rem);
+  font-size: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
   color: #7a7974;
   border-top: 1px solid rgba(40, 37, 29, 0.12);
 }
