@@ -371,3 +371,8 @@ input[type=submit]:hover {
   color: #7a7974;
   border-top: 1px solid rgba(40, 37, 29, 0.12);
 }
+
+.dark-mode .footer {
+  color: #7a7974;
+  border-top: 1px solid rgba(247, 246, 242, 0.12);
+}
