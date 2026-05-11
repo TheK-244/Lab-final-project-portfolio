@@ -23,7 +23,7 @@ function toggleDarkMode() {
   document.body.classList.toggle('dark-mode');
 }
 
-fetch('https://corsproxy.io/?https://khalid-yaser-infinityfreeapp.free.nf/api.php')
+fetch('http://localhost/portfolio-for-localhosting/api.php')
   .then(res => res.json())
   .then(data => {
     document.getElementById('hero-name').textContent    = data.full_name;
