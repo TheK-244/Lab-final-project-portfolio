@@ -13,12 +13,27 @@ const hamburger = document.getElementById('hamburger');
       });
     });
 
-    function handleSubmit(e) {
-      e.preventDefault();
-      document.getElementById('form-success').hidden = false;
-      e.target.reset();
-    }
+function handleSubmit(e) {
+  e.preventDefault();
+  document.getElementById('form-success').hidden = false;
+  e.target.reset();
+}
 
-    function toggleDarkMode() {
-      document.body.classList.toggle('dark-mode');
-    }
+function toggleDarkMode() {
+  document.body.classList.toggle('dark-mode');
+}
+
+fetch('https://khalid-yaser-infinityfreeapp.free.nf/api.php')
+  .then(res => res.json())
+  .then(data => {
+    document.getElementById('hero-name').textContent    = data.full_name;
+    document.getElementById('hero-text').textContent    = data.hero_text;
+    document.getElementById('about-text').textContent   = data.about_text;
+
+    const projectsList = document.getElementById('projects-list');
+    data.projects.forEach(p => {
+      const div = document.createElement('div');
+      div.innerHTML = `<h3>${p.title}</h3><p>${p.description}</p>`;
+      projectsList.appendChild(div);
+    });
+  });
