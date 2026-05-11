@@ -33,7 +33,8 @@ fetch('https://khalid-yaser-infinityfreeapp.free.nf/api.php')
     const projectsList = document.getElementById('projects-list');
     data.projects.forEach(p => {
       const div = document.createElement('div');
-      div.innerHTML = `<h3>${p.title}</h3><p>${p.description}</p>`;
+      div.innerHTML = `<div class="project-card"><h3>${p.title}</h3><p>${p.description}</p></div>`;
       projectsList.appendChild(div);
     });
-  });
+  })
+   .catch(err => console.error('API fetch failed:', err));
