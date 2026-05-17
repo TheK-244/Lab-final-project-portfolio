@@ -13,43 +13,12 @@ const hamburger = document.getElementById('hamburger');
       });
     });
 
-function handleSubmit(e) {
-    e.preventDefault();
-    const form = e.target;
-    const data = new FormData(form);
+    function handleSubmit(e) {
+      e.preventDefault();
+      document.getElementById('form-success').hidden = false;
+      e.target.reset();
+    }
 
-    fetch('http://localhost/portfolio-for-localhosting/send_mail.php', {
-        method: 'POST',
-        body: data
-    })
-    .then(res => res.json())
-    .then(result => {
-        if (result.success) {
-            document.getElementById('form-success').hidden = false;
-            form.reset();
-        } else {
-            alert('Failed to send: ' + result.error);
-        }
-    })
-    .catch(() => alert('Something went wrong.'));
-}
-
-function toggleDarkMode() {
-  document.body.classList.toggle('dark-mode');
-}
-
-fetch('http://localhost/portfolio-for-localhosting/api.php')
-  .then(res => res.json())
-  .then(data => {
-    document.getElementById('hero-name').textContent    = data.full_name;
-    document.getElementById('hero-text').textContent    = data.hero_text;
-    document.getElementById('about-text').textContent   = data.about_text;
-
-    const projectsList = document.getElementById('projects-list');
-    data.projects.forEach(p => {
-      const div = document.createElement('div');
-      div.innerHTML = `<div class="project-card"><h3>${p.title}</h3><p>${p.description}</p></div>`;
-      projectsList.appendChild(div);
-    });
-  })
-   .catch(err => console.error('API fetch failed:', err));
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark-mode');
+    }
